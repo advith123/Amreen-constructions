@@ -124,7 +124,7 @@ input, textarea { font: inherit; color: inherit; }
 
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .logo-img {
-  height: 48px;
+  height: 50px;
   width: auto;
   display: block;
   flex-shrink: 0;
@@ -136,21 +136,24 @@ input, textarea { font: inherit; color: inherit; }
   display: flex;
   flex-direction: column;
   line-height: 1;
+  flex-shrink: 0;
 }
 .brand-text-h .name {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   letter-spacing: 0.06em;
-  color: var(--navy);
+  color: #0d1b2a;
+  white-space: nowrap;
 }
 .brand-text-h .sub {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 0.6rem;
   letter-spacing: 0.2em;
-  color: var(--muted);
+  color: #5b6877;
   margin-top: 5px;
+  white-space: nowrap;
 }
 
 /* Nav menu */
@@ -228,13 +231,13 @@ input, textarea { font: inherit; color: inherit; }
   .nav-link { font-size: 0.72rem; letter-spacing: 0.08em; }
 }
 @media (max-width: 1024px) {
-  .nav-wrap { gap: 12px; }
+  .nav-wrap { gap: 10px; }
   .nav-menu { gap: 14px; }
   .nav-link { font-size: 0.7rem; letter-spacing: 0.06em; }
   .phone-cta { padding: 10px 14px; font-size: 0.78rem; }
   .phone-cta span { display: none; }
-  .logo-img { height: 44px; }
-  .brand-text-h .name { font-size: 1rem; }
+  .logo-img { height: 46px; }
+  .brand-text-h .name { font-size: 1.05rem; }
   .brand-text-h .sub { font-size: 0.55rem; }
 }
 
@@ -808,9 +811,12 @@ input, textarea { font: inherit; color: inherit; }
   }
   .nav-menu.open { transform: translateY(0); }
   .phone-cta { display: none; }
-  .logo-img { height: 42px; }
-  .brand-text-h .name { font-size: 0.95rem; }
-  .brand-text-h .sub { font-size: 0.5rem; letter-spacing: 0.16em; }
+  .nav-wrap { gap: 8px; padding-top: 12px; padding-bottom: 12px; }
+  .logo-img { height: 44px; }
+  .brand { gap: 10px; }
+  .brand-text-h .name { font-size: 1rem; letter-spacing: 0.04em; }
+  .brand-text-h .sub { font-size: 0.52rem; letter-spacing: 0.16em; margin-top: 4px; }
+  .nav-toggle { display: flex; flex-shrink: 0; margin-right: -6px; }
 
   .hero { min-height: 80vh; }
   .hero-overlay {
@@ -844,7 +850,9 @@ input, textarea { font: inherit; color: inherit; }
 @media (max-width: 480px) {
   .container { padding: 0 18px; }
   .hero-content { padding: 60px 18px; }
-  .brand-text em { font-size: 0.5rem; }
+  .brand-text h1 em { font-size: 0.5rem; }
+  .brand-text-h .sub { display: none; }
+  .brand-text-h .name { font-size: 1.1rem; }
   .btn { padding: 12px 20px; font-size: 0.78rem; }
 }
 
