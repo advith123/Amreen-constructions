@@ -77,11 +77,7 @@
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
       <a href="index.html" class="brand" aria-label="Amreen Constructions Pvt Ltd Home">
-        <img src="logo.png" alt="" class="logo-img" width="175" height="200" />
-        <span class="brand-text-h">
-          <span class="name">AMREEN</span>
-          <span class="sub">CONSTRUCTIONS</span>
-        </span>
+        <img src="logo.png" alt="Amreen Constructions Pvt Ltd" class="logo-img" width="677" height="369" />
       </a>
 
       <nav class="primary-nav" aria-label="Primary navigation">
@@ -99,12 +95,12 @@
         </ul>
       </nav>
 
-      <a href="tel:+917032114099" class="phone-cta">
+     <!-- <a href="tel:+917032114099" class="phone-cta">
         <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
           <path fill="currentColor" d="M6.6 10.8a15.05 15.05 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/>
         </svg>
         <span>+91 7032114099</span>
-      </a>
+      </a> -->
     </div>
   </header>
 
@@ -418,29 +414,67 @@
       <form class="contact-form reveal" data-delay="120" id="contactForm" novalidate>
         <div class="form-row">
           <div class="field">
-            <input type="text" id="name" name="name" placeholder="Your Name" required />
+            <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name" />
           </div>
           <div class="field">
-            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required />
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required autocomplete="tel" />
           </div>
         </div>
+
         <div class="field">
-          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+          <label class="field-label">What are you looking to build? <span class="req" aria-hidden="true">*</span></label>
+          <div class="property-options" role="radiogroup" aria-label="Property type">
+            <label class="prop-chip">
+              <input type="radio" name="propertyType" value="Independent House" required />
+              <span>Independent House</span>
+            </label>
+            <label class="prop-chip">
+              <input type="radio" name="propertyType" value="Apartment" />
+              <span>Apartment</span>
+            </label>
+            <label class="prop-chip">
+              <input type="radio" name="propertyType" value="Villa" />
+              <span>Villa</span>
+            </label>
+            <label class="prop-chip">
+              <input type="radio" name="propertyType" value="Commercial Complex" />
+              <span>Commercial Complex</span>
+            </label>
+          </div>
         </div>
-        <button type="submit" class="btn btn-dark form-submit">
-          Send Message
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 11h12.2l-3.6-3.6L14 6l6 6-6 6-1.4-1.4L16.2 13H4z"/></svg>
+
+        <div class="field">
+          <textarea id="message" name="message" rows="4" placeholder="Tell us about your project — plot location, size, timeline, budget, etc." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-whatsapp form-submit">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.464 3.488"/></svg>
+          Send on WhatsApp
         </button>
         <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
       </form>
 
-      <div class="contact-map reveal" data-delay="240" aria-label="Map of Warangal, India">
-        <div class="map-grid" aria-hidden="true"></div>
-        <div class="map-pin">
-          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#0d1b2a" d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
-          <strong>Warangal</strong>
-          <span>India</span>
-        </div>
+      <div class="contact-map reveal" data-delay="240" aria-label="Map showing Amreen Constructions location in Warangal, India">
+        <iframe
+          src="https://www.google.com/maps?q=18.008779,79.547088&z=16&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Amreen Constructions location on Google Maps">
+        </iframe>
+        <a href="https://www.google.com/maps?q=18.008779,79.547088"
+           class="map-overlay"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Open in Google Maps">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+            <path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/>
+          </svg>
+          Open in Maps
+        </a>
       </div>
     </div>
   </section>
@@ -451,17 +485,8 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="#home" class="brand brand-footer">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 64 64" width="34" height="34">
-              <path d="M10 50V26l12-7 12 7v24H10zm26 0V32l9-6 9 6v18H36z" fill="#d4a23a"/>
-            </svg>
-          </span>
-          <span class="brand-text">
-            <strong>AMREEN</strong>
-            <em>CONSTRUCTIONS PVT LTD</em>
-            <small>TURNING LAND INTO LANDMARKS</small>
-          </span>
+        <a href="index.html" class="brand brand-footer" aria-label="Amreen Constructions Home">
+          <img src="logo-light.png" alt="Amreen Constructions Pvt Ltd" class="logo-img-footer" width="677" height="369" />
         </a>
         <p>33+ years of excellence in construction.<br/>We transform land into landmarks with trust, quality and commitment.</p>
       </div>
@@ -509,10 +534,31 @@
     </div>
   </footer>
 
+  <!-- ============ FLOATING CONTACT BUTTONS ============ -->
+  <div class="floating-contact" aria-label="Quick contact">
+    <a href="#contact"
+       class="float-btn whatsapp"
+       aria-label="Send us an enquiry on WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.464 3.488"/>
+      </svg>
+      <span class="tip">Send Enquiry</span>
+    </a>
+    <a href="tel:+917032114099"
+       class="float-btn phone"
+       aria-label="Call us at +91 70321 14099">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+      </svg>
+      <span class="tip">Call +91 70321 14099</span>
+    </a>
+  </div>
+
   <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 4l8 8h-5v8h-6v-8H4z"/></svg>
   </a>
 
   <script src="script.js" defer></script>
+
 </body>
 </html>

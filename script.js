@@ -24,19 +24,40 @@
   /* ---------- Mobile nav toggle ---------- */
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
+  const closeMenu = () => {
+    if (!navMenu) return;
+    navMenu.classList.remove('open');
+    navToggle && navToggle.classList.remove('open');
+    navToggle && navToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+  };
   if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       const open = navMenu.classList.toggle('open');
       navToggle.classList.toggle('open', open);
       navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('nav-open', open);
     });
     // Close menu when a link is clicked
     navMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        navToggle.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
+      a.addEventListener('click', closeMenu);
+    });
+    // Close on outside click/tap
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('open') &&
+          !navMenu.contains(e.target) &&
+          !navToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+    // Close when window resizes above mobile breakpoint
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMenu();
     });
   }
 
@@ -99,22 +120,24 @@
     }, 4000);
   }
 
-  /* ---------- Contact form ---------- */
+  /* ---------- Contact form → WhatsApp ---------- */
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
 
-  const validatePhone = (val) => /^[+\d][\d\s\-()]{7,}$/.test(val.trim());
+  const WA_NUMBER = '917032114099';
   const validateName = (val) => val.trim().length >= 2;
+  const validatePhone = (val) => /^[+\d][\d\s\-()]{7,}$/.test(val.trim());
   const validateMessage = (val) => val.trim().length >= 5;
 
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      status.classList.remove('error');
+      status.classList.remove('error', 'success');
       status.textContent = '';
 
       const name = form.name.value;
       const phone = form.phone.value;
+      const propertyRadio = form.querySelector('input[name="propertyType"]:checked');
       const message = form.message.value;
 
       if (!validateName(name)) {
@@ -129,25 +152,45 @@
         form.phone.focus();
         return;
       }
+      if (!propertyRadio) {
+        status.classList.add('error');
+        status.textContent = 'Please select what you\'re looking to build.';
+        // Scroll the chips into view if needed
+        const chips = form.querySelector('.property-options');
+        if (chips) chips.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
       if (!validateMessage(message)) {
         status.classList.add('error');
-        status.textContent = 'Please enter a brief message.';
+        status.textContent = 'Please share a brief message about your project.';
         form.message.focus();
         return;
       }
 
-      // Compose mailto fallback (opens user's mail client)
-      const subject = encodeURIComponent('New Enquiry — Amreen Constructions');
-      const body = encodeURIComponent(
-        `Name: ${name}\nPhone: ${phone}\n\nMessage:\n${message}`
-      );
-      const mailto = `mailto:advithreddydanda@gmail.com?subject=${subject}&body=${body}`;
+      const propertyType = propertyRadio.value;
 
-      status.textContent = 'Thank you! Opening your email client to send the message...';
-      // Open mailto in a small timeout so the user sees the success state
-      setTimeout(() => { window.location.href = mailto; }, 350);
+      // Compose pre-filled WhatsApp message
+      let waMessage = `Hello Amreen Constructions! 👋\n\n`;
+      waMessage += `My name is ${name.trim()}.\n`;
+      waMessage += `Phone: ${phone.trim()}\n`;
+      waMessage += `I'm interested in: *${propertyType}*\n\n`;
+      waMessage += `Project details:\n${message.trim()}\n\n`;
+      waMessage += `Please share more information. Thank you!`;
 
-      form.reset();
+      const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waMessage)}`;
+
+      status.classList.add('success');
+      status.textContent = 'Opening WhatsApp...';
+
+      // Open WhatsApp in a new tab — works on both mobile (app) and desktop (web)
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+
+      // Reset form after a short delay
+      setTimeout(() => {
+        form.reset();
+        status.textContent = '';
+        status.classList.remove('success');
+      }, 2000);
     });
   }
 
