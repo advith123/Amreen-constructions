@@ -124,7 +124,7 @@
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
 
-  const WA_NUMBER = '917032114099';
+  const WA_NUMBER = '9189850912769';
   const validateName = (val) => val.trim().length >= 2;
   const validatePhone = (val) => /^[+\d][\d\s\-()]{7,}$/.test(val.trim());
   const validateMessage = (val) => val.trim().length >= 5;
