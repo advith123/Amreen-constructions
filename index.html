@@ -37,29 +37,61 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- JSON-LD: Organization Schema -->
+  <!-- JSON-LD: Organization / LocalBusiness Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "GeneralContractor",
+    "@id": "https://amreenconstructions.com/#organization",
     "name": "Amreen Constructions Pvt Ltd",
     "alternateName": "Amreen Constructions",
     "description": "33+ years of construction excellence in Warangal, India. Specialists in villas, apartments and commercial projects.",
     "url": "https://amreenconstructions.com/",
+    "logo": "https://amreenconstructions.com/logo.png",
+    "image": "https://amreenconstructions.com/logo.png",
     "telephone": "+91-8985091276",
+    "email": "advithreddydanda@gmail.com",
     "foundingDate": "1992",
     "slogan": "Turning Land Into Landmarks",
+    "priceRange": "₹₹–₹₹₹",
+    "currenciesAccepted": "INR",
+    "paymentAccepted": "Cash, Bank Transfer, Cheque",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Warangal",
       "addressRegion": "Telangana",
       "addressCountry": "IN"
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Warangal"
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 18.008779,
+      "longitude": 79.547088
     },
-    "knowsAbout": ["Villa Construction", "Apartment Construction", "Commercial Construction", "Real Estate Development"],
+    "hasMap": "https://www.google.com/maps?q=18.008779,79.547088",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:30",
+        "closes": "19:00"
+      }
+    ],
+    "areaServed": [
+      { "@type": "City", "name": "Warangal" },
+      { "@type": "City", "name": "Hanamkonda" },
+      { "@type": "City", "name": "Kazipet" },
+      { "@type": "AdministrativeArea", "name": "Telangana" }
+    ],
+    "serviceType": [
+      "Residential Construction",
+      "Commercial Construction",
+      "Villa Construction",
+      "Apartment Construction",
+      "Turnkey Construction",
+      "Renovation and Interior Works",
+      "Plot Development"
+    ],
+    "knowsAbout": ["Villa Construction", "Apartment Construction", "Commercial Construction", "Real Estate Development", "Turnkey Projects", "HMDA Approvals", "DTCP Approvals"],
     "founder": [
       { "@type": "Person", "name": "Md Shafi Ahmed", "jobTitle": "Managing Director" }
     ],
@@ -67,6 +99,101 @@
       { "@type": "Person", "name": "Md Shafi Ahmed", "jobTitle": "Managing Director" },
       { "@type": "Person", "name": "Rumana Amreen", "jobTitle": "Assistant Director" },
       { "@type": "Person", "name": "Adnan Ahmed", "jobTitle": "Financial Head" }
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-8985091276",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Telugu", "Hindi", "Urdu"]
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: WebSite (sitelinks search) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://amreenconstructions.com/#website",
+    "url": "https://amreenconstructions.com/",
+    "name": "Amreen Constructions Pvt Ltd",
+    "description": "Construction company in Warangal — villas, apartments, commercial projects.",
+    "publisher": { "@id": "https://amreenconstructions.com/#organization" },
+    "inLanguage": "en-IN"
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does house construction cost in Warangal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Construction in Warangal generally falls into three bands: basic standard construction at roughly ₹1,200–₹1,600 per sq ft, mid-range construction with good quality materials at ₹1,700–₹2,200 per sq ft, and premium villa-grade work with luxury finishes at ₹2,500–₹3,500+ per sq ft. The final figure depends on materials, design complexity, site conditions, and approvals. We provide a fully itemised estimate after a site visit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which is the best construction company in Warangal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The right builder depends on what matters most to you — design, speed, transparent pricing, or proven reliability. Amreen Constructions Pvt Ltd has been building in Warangal for 33+ years across villas, apartments, and commercial projects, with a reputation for clean documentation, on-time delivery, and material quality you can verify yourself at every stage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is turnkey construction?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Turnkey construction means handing over a plot and receiving a complete, ready-to-move-in building. The contract covers design, approvals, structure, finishes, electricals, plumbing, and fittings under a single fixed price and timeline. You do not coordinate separate contractors, vendors, or material runs — there is one contract and one point of accountability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does residential construction take in Warangal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A standard 2,000–3,000 sq ft independent house typically takes 9–12 months from approved plan to handover. Larger villas or buildings with complex finishes can run 12–18 months. Monsoon months (July–September) usually slow site work. A clear plan, prompt approvals, and an experienced site team are what protect the timeline."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I choose the right builder in Warangal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Visit at least three completed projects and one site currently under construction. Call past clients. Verify the build quality and structural detailing in person. Check the contract for a clear specification document, milestone-linked payments, a defects liability period, and a named project manager. A builder who welcomes scrutiny is the one worth shortlisting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you handle building approvals and permissions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We manage all required approvals — building permits, layout sanctions where applicable, water and electricity connections, occupancy certificate, and registration support. Our team coordinates directly with the municipal and revenue offices through TS-bPASS and other Telangana portals so the timeline is not held up by paperwork."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas around Warangal do you build in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We build across Warangal, Hanamkonda, Kazipet, and the surrounding districts of Telangana. For commercial and larger residential projects we also take on work further afield across the state."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with home loans and banks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We do not provide financing ourselves, but we work with all major banks and housing finance institutions and prepare the documentation packages they require — sanctioned plans, cost estimates, and stage-wise valuation reports — so loan disbursements stay aligned with construction milestones."
+        }
+      }
     ]
   }
   </script>
@@ -90,6 +217,7 @@
           <li><a href="#expertise" class="nav-link">Our Expertise</a></li>
           <li><a href="#why" class="nav-link">Why Choose Us</a></li>
           <li><a href="#leadership" class="nav-link">Leadership</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="#contact" class="nav-link">Contact Us</a></li>
         </ul>
@@ -372,6 +500,128 @@
     </div>
   </section>
 
+  <!-- ============ FAQ ============ -->
+  <section class="section faq" id="faq" aria-labelledby="faqHeading">
+    <div class="container">
+      <p class="eyebrow gold center">— FAQ</p>
+      <h2 id="faqHeading" class="section-title center">Frequently Asked Questions</h2>
+      <p class="section-sub center">Straight answers to the questions we hear most often from homeowners and investors in Warangal.</p>
+
+      <div class="faq-list">
+
+        <details class="faq-item reveal">
+          <summary>
+            <span>How much does house construction cost in Warangal?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>Construction in Warangal generally falls into three bands:</p>
+            <ul>
+              <li><strong>Basic standard construction:</strong> ₹1,200–₹1,600 per sq ft</li>
+              <li><strong>Mid-range with good quality materials:</strong> ₹1,700–₹2,200 per sq ft</li>
+              <li><strong>Premium villa-grade with luxury finishes:</strong> ₹2,500–₹3,500+ per sq ft</li>
+            </ul>
+            <p>The final figure depends on materials, design complexity, site conditions, and approvals. We provide a fully itemised estimate after a site visit so you know exactly what you are paying for at each stage.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" data-delay="60">
+          <summary>
+            <span>Which is the best construction company in Warangal?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>The right builder depends on what matters most to you — design, speed, transparent pricing, or proven reliability. Amreen Constructions Pvt Ltd has been building in Warangal for 33+ years across villas, apartments, and commercial projects, with a reputation for clean documentation, on-time delivery, and material quality you can verify yourself at every stage. The best test is to visit our completed and ongoing sites in person.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" data-delay="120">
+          <summary>
+            <span>What is turnkey construction?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>Turnkey construction means handing over a plot and receiving a complete, ready-to-move-in building. The contract covers design, approvals, structure, finishes, electricals, plumbing, and fittings under a single fixed price and timeline. You do not coordinate separate contractors, vendors, or material runs — there is one contract and one point of accountability. <a href="blog-turnkey-construction-explained.html">Read our full guide to turnkey construction →</a></p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" data-delay="180">
+          <summary>
+            <span>How long does residential construction take in Warangal?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>A standard 2,000–3,000 sq ft independent house typically takes <strong>9–12 months</strong> from approved plan to handover. Larger villas or buildings with complex finishes can run 12–18 months. Monsoon months (July–September) usually slow site work. A clear plan, prompt approvals, and an experienced site team are what protect the timeline.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" data-delay="240">
+          <summary>
+            <span>How do I choose the right builder in Warangal?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>Visit at least three completed projects and one site currently under construction. Call past clients. Verify the build quality and structural detailing in person. Check the contract for:</p>
+            <ul>
+              <li>A clear, line-item specification document</li>
+              <li>Milestone-linked payments</li>
+              <li>A defects liability period (typically 12 months)</li>
+              <li>A named project manager</li>
+            </ul>
+            <p>A builder who welcomes scrutiny is the one worth shortlisting.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" data-delay="300">
+          <summary>
+            <span>Do you handle building approvals and permissions?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. We manage all required approvals — building permits, layout sanctions where applicable, water and electricity connections, the occupancy certificate, and registration support. Our team coordinates directly with the municipal and revenue offices through TS-bPASS and other Telangana portals so your timeline is not held up by paperwork.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" data-delay="360">
+          <summary>
+            <span>What areas around Warangal do you build in?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>We build across Warangal, Hanamkonda, Kazipet, and the surrounding districts of Telangana. For commercial and larger residential projects we also take on work further afield across the state.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" data-delay="420">
+          <summary>
+            <span>Do you work with home loans and banks?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>We do not provide financing ourselves, but we work with all major banks and housing finance institutions and prepare the documentation packages they require — sanctioned plans, cost estimates, and stage-wise valuation reports — so loan disbursements stay aligned with construction milestones.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ============ CTA BANNER ============ -->
   <section class="cta-banner" aria-label="Call to action">
     <div class="container cta-row">
@@ -499,6 +749,7 @@
           <li><a href="#expertise">Our Expertise</a></li>
           <li><a href="#why">Why Choose Us</a></li>
           <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="#contact">Contact Us</a></li>
         </ul>
